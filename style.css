@@ -211,7 +211,7 @@ button:hover {
         margin-top: -300px;
         top:0;
         visibility: hidden;
-        -webkit-print-color-adjust: exact; /* Garante que cores/bordas apareçam */
+        /* -webkit-print-color-adjust: exact; Garante que cores/bordas apareçam */
     }
 
     .print-container, .print-container * {
