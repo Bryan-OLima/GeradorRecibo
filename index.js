@@ -47,7 +47,7 @@ const generateTicket = (ticket, date) => {
                 </div>
                 
                 <div class="receipt-body">
-                    <p>Recebemos de <span style="font-weight: bold">${ticket.name}</span> a importância referente ao aluguel do imóvel situado em: <br>
+                    <p>Recebemos de <span style="font-weight: bold">${ticket.name}</span> a importância referente ao aluguel do imóvel situado em: 
                     <br/>
                     <em>${ticket.address} - ${ticket.city}/SP</em></p>
                 </div>
@@ -76,7 +76,7 @@ const generateTicket = (ticket, date) => {
                 </div>
                 
                 <div class="receipt-body">
-                    <p>Recebemos de <span style="font-weight: bold">${ticket.name}</span> a importância referente ao aluguel do imóvel situado em: <br>
+                    <p>Recebemos de <span style="font-weight: bold">${ticket.name}</span> a importância referente ao aluguel do imóvel situado em:
                     <br/>
                     <em>${ticket.address} - ${ticket.city}/SP</em></p>
                 </div>
