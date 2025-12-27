@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #4a4a4a;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Aplica o estilo tanto para inputs quanto para o select */
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+    appearance: none; 
+}
+
+.input-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23764ba2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    padding-right: 40px;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #764ba2;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(118, 75, 162, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #764ba2, #667eea);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+}
+
+#output {
+    border-left: 5px solid #764ba2;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo para a tela e para a impressão */
+.print-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #000;
+}
+
+.receipt-box {
+    border: 2px solid #333;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.receipt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.receipt-header h1 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 5px 15px;
+}
+
+.receipt-body {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.receipt-footer {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.signature {
+    width: 60%;
+}
+
+.line {
+    width: 300px;
+}
+.signature .line {
+    border-bottom: 1px solid #000;
+    margin: 10px 0 5px 0;
+}
+
+
+.date-location {
+    padding-top: 20px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.cut-line {
+    border-top: 2px dashed #aaa;
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.cut-line span {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff; 
+    padding: 0 10px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* REGRAS ESPECÍFICAS DE IMPRESSÃO */
+@media print {
+    /* Esconde absolutamente tudo na página */
+    body * {
+        margin-top: -300px;
+        top:0;
+        visibility: hidden;
+        -webkit-print-color-adjust: exact; /* Garante que cores/bordas apareçam */
+    }
+
+    .print-container, .print-container * {
+        margin-top: 0;
+        top:0;
+        visibility: visible;
+    }
+
+    .print-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: block !important;
+    }
+}
+

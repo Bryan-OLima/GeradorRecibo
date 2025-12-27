@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Recibos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content card">
+            <h1>Gerador de Recibo</h1>
+            
+            <div class="input-group">
+                <label>Nome</label>
+                <input type="text" class="name" placeholder="Digite o nome completo">
+            </div>
+
+            <div class="input-group">
+                <label>Endereço</label>
+                <input type="text" class="address" placeholder="Rua, Número, Bairro">
+            </div>
+
+            <div class="input-group">
+                <label>Selecione uma cidade</label>
+                <select name="cities" id="cities">
+                    <option value="Santa Fé do Sul">Santa fé do Sul</option>
+                    <option value="Três Fronteiras">Três Fronteiras</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Valor</label>
+                <input type="number" class="price" placeholder="R$ 0,00">
+            </div>
+
+            <button id="myButton">Gerar Recibo</button>
+        </div>
+
+        <div id="output" class="content card hidden"></div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
