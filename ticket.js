@@ -1,6 +1,4 @@
 export default class Ticket{
-
-    
     constructor(name, address, price, city) {
         this.name = name;
         this.address = address;
