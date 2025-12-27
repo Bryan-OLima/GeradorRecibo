@@ -157,12 +157,12 @@ button:hover {
 .receipt-body {
     line-height: 1.6;
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .receipt-footer {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     justify-content: space-between;
     align-items: flex-end;
 }
