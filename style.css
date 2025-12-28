@@ -154,6 +154,10 @@ button:hover {
     padding: 5px 15px;
 }
 
+.receipt-button {
+    margin-top: 15px;
+}
+
 .receipt-body {
     line-height: 1.6;
     font-size: 1.1rem;
