@@ -11,11 +11,12 @@ const getReceipts = document.querySelector("#getReceipts");
 
 let receipt; 
 const db = localStorageController();
-console.log(db.getAll);
+console.log(db.getAll());
 
 myButton.addEventListener("click", ()=> {
     const ticket = new Ticket("Ticket_" + Date.now(), name.value, address.value, price.value, city.value, formateDate());
     const data = localStorageController(ticket);
+
     receipt = data;
     if(ticket.name && ticket.address && ticket.price && ticket.city){
         generateTicket(ticket, formateDate());    
@@ -42,24 +43,6 @@ const formateCurrency = (value) =>{
         currency: "BRL"
     }).format(value);
 }
-
-// const setGeneratedTicket = (data) => {
-//     console.log(data);
-//     receipt.set(data.id);
-// }
-
-// const getGeneratedTicket = (data) => {
-//     receipt.get(data.id);
-// }
-
-// const getAllGeneratedTickets = (data) => {
-//     receipt.getAll()
-// }
-
-// const deleteGeneratedTicket = (data) => {
-//     receipt.delete(data.id);
-// }
-
 
 const generateTicket = (ticket, date) => {
     ticket.price = formateCurrency(ticket.price);
@@ -122,6 +105,6 @@ const generateTicket = (ticket, date) => {
 
         </div>
     `;
-    setGeneratedTicket(ticket);
+    db.set(ticket);
     // ticket.print();
 }
