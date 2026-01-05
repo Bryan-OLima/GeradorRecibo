@@ -11,7 +11,6 @@ const getReceipts = document.querySelector("#getReceipts");
 
 let receipt; 
 const db = localStorageController();
-console.log(db.getAll());
 
 myButton.addEventListener("click", ()=> {
     const ticket = new Ticket("Ticket_" + Date.now(), name.value, address.value, price.value, city.value, formateDate());
@@ -43,6 +42,10 @@ const formateCurrency = (value) =>{
         currency: "BRL"
     }).format(value);
 }
+
+
+getReceipts.addEventListener("click", () => {
+})
 
 const generateTicket = (ticket, date) => {
     ticket.price = formateCurrency(ticket.price);

@@ -17,12 +17,15 @@ export default function localStorageController(keyName) {
 
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
-                const value = localStorage.getItem(key);
+               
+                if(key.startsWith("Ticket_")){
+                    const value = localStorage.getItem(key);
 
-                try {
-                    db[key] = JSON.parse(value);
-                } catch {
-                    db[key] = value;
+                    try {
+                        db[key] = JSON.parse(value);
+                    } catch {
+                        db[key] = value;
+                    }
                 }
                 
             }
