@@ -109,5 +109,5 @@ const generateTicket = (ticket, date) => {
         </div>
     `;
     db.set(ticket);
-    // ticket.print();
+    ticket.print();
 }
